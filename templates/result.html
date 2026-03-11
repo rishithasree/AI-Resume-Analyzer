@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="container">
+
+<h1>AI Resume Analyzer Result</h1>
+
+<h2>Resume Score</h2>
+
+<h1 class="score">{{ score }} / 100</h1>
+
+<h2>Student Skills</h2>
+
+<ul>
+{% for skill in skills %}
+<li>{{ skill }}</li>
+{% endfor %}
+</ul>
+
+<h3>{{ status }}</h3>
+
+<div class="qualification-result">
+
+{% if score >= 50 %}
+<p class="qualified"></p>
+{% else %}
+<p class="not-qualified"></p>
+{% endif %}
+
+<a href="/" class="next-btn">Analyze Another Resume</a>
+
+</div>
+
+</div>
+
+{% endblock %}
